@@ -1,0 +1,401 @@
+/* Simple Dark Blue Background with Animation */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #0f3460; /* Dark Blue Background */
+    animation: colorShift 20s ease infinite; /* Animation on the background color */
+    color: white;
+}
+
+/* Keyframes for smooth color animation */
+@keyframes colorShift {
+    0% {
+        background-color: #981414; /* Dark Blue */
+    }
+    50% {
+        background-color: #141f3c; /* Slightly darker blue */
+    }
+    100% {
+        background-color: #4b22bc; /* Dark Blue (back to original) */
+    }
+}
+
+
+
+/* Navigation Bar */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #0f0123, #241aa7);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+.nav-links li a:hover {
+    background-color: white;
+    color: #0056b3;
+    border-radius: 5px;
+}
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+.nav-links li a:hover::after {
+    width: 100%;
+}
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center; /* Centers the logo vertically */
+}
+.logo img {
+    height: 60px; /* Adjust the size of the logo */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 30%; Optional: Makes the logo circular if needed
+    margin-right: 20px; /* Adds space between the logo and nav links */
+    transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px; /* Smaller size for mobile screens */
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #ffd700;
+    color: #0056b3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #e0b800;
+}
+.services {
+    padding: 50px 20px;
+    /* background-color: #e9ecef; */
+    text-align: center;
+}
+.services h2 {
+    margin-bottom: 30px;
+    /* color: black; */
+}
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card i {
+    font-size: 2rem;
+    color: #0056b3;
+}
+.card h3 {
+    margin: 15px 0;
+}
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+}
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #0f0123, #241aa7);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #243b55;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Subheading */
+.login-box p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+.input-group i {
+    color: #888;
+    margin-right: 10px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    flex: 1;
+    color: #333;
+}
+
+/* Login Button */
+.btn-login {
+    background: #243b55;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: #141e30;
+    transform: scale(1.05);
+}
+
+/* Options */
+.options {
+    margin-top: 15px;
+}
+
+.options a {
+    font-size: 0.9rem;
+    color: #243b55;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .login-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+/* Create Account Container */
+.create-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.create-account-box {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.create-account-box h2 {
+    margin-bottom: 10px;
+    color: #283e51;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Subheading */
+.create-account-box p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+.input-group i {
+    color: #888;
+    margin-right: 10px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    flex: 1;
+    color: #333;
+}
+
+/* Sign Up Button */
+.btn-create-account {
+    background: #283e51;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-create-account:hover {
+    background: #4b79a1;
+    transform: scale(1.05);
+}
+
+/* Options Section */
+.options {
+    margin-top: 15px;
+}
+
+.options a {
+    font-size: 0.9rem;
+    color: #283e51;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create-account-box {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .create-account-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-create-account {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

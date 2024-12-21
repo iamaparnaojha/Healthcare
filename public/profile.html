@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="profile">
+        <h1>Welcome, <span id="user-name"></span></h1>
+        <p>Email: <span id="user-email"></span></p>
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <script>
+        // Fetch user profile data
+        async function getUserProfile() {
+            const response = await fetch('/api/profile', {
+                method: 'GET',
+                credentials: 'same-origin', // Ensure cookies are sent
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('user-name').textContent = result.user.name;
+                document.getElementById('user-email').textContent = result.user.email;
+            } else {
+                alert(result.message); // Show error message
+                window.location.href = 'login.html'; // Redirect to login if not authorized
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            const response = await fetch('/api/logout', {
+                method: 'POST',
+                credentials: 'same-origin',
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                window.location.href = 'login.html'; // Redirect to login page
+            }
+        });
+
+        getUserProfile(); // Call the function to display profile data
+    </script>
+</body>
+</html>
